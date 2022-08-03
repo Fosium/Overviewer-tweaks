@@ -3,4 +3,6 @@ Tweaks to https://overviewer.org based in configuration files, without any modif
 
 Todo:
 
-so much :(
+-Move lists to mclist.py and import to main
+-Add comments
+-
