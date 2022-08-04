@@ -476,7 +476,7 @@ ALL_ITEMS = {
 
 worlds["Hypnos SMP"] = "C:/Users/benme/Desktop/Hypnos SMP"  # PATH TO YOUR WORLD
 world = "Hypnos SMP"
-customwebassets = "C:/Users/benme/Desktop/ov-config/web_assets"  # PATH TO YOUR WEB ASSETS
+customwebassets = "C:/Users/benme/Desktop/overviewer-tweaks-main"  # PATH TO YOUR WEB ASSETS
 outputdir = "C:/Users/benme/Desktop/hypnos-output"  # PATH TO YOUR OUTPUT DIR
 
 custom_overlay_rendermode = [HeatmapOverlay(
@@ -499,10 +499,10 @@ def translateItemId(itemid, iconsuffix=False, iconprefix=True):
     if itemid in ALL_ITEMS:
         istr = ""
         if iconprefix:
-            istr += '<img src="icons/{0}.png" alt="{1}" width="16" height="16"> '.format(itemid.split(':')[1], ALL_ITEMS[itemid])
+            istr += '<img src="poi_icons/icons/{0}.png" alt="{1}" width="16" height="16"> '.format(itemid.split(':')[1], ALL_ITEMS[itemid])
         istr += ALL_ITEMS[itemid]
         if iconsuffix:
-            istr += ' <img src="icons/{0}.png" alt="{1}" width="16" height="16">'.format(itemid.split(':')[1], ALL_ITEMS[itemid])
+            istr += ' <img src="poi_icons/{0}.png" alt="{1}" width="16" height="16">'.format(itemid.split(':')[1], ALL_ITEMS[itemid])
         return istr
     else:
         return itemid
@@ -1110,12 +1110,12 @@ for render in renders.keys():
 	render: dict = renders[render]
 	markers = render.setdefault(
 		'markers', [
-			dict(name="<b><u>Locations", filterFunction=location_filter, showIconInLegend=True, icon="mlocation.png"),
-			dict(name="Players", filterFunction=player_icons, showIconInLegend=True, icon="playerhead.png"),
-            dict(name="Chests", filterFunction=chest_filter, icon="chest.png", showIconInLegend=True),
-			dict(name="Shulkers", filterFunction=shulker_filter, icon="shulker.png", showIconInLegend=True),
+			dict(name="<b><u>Locations", filterFunction=location_filter, showIconInLegend=True, icon="marker_icons/mlocation.png"),
+			dict(name="Players", filterFunction=player_icons, showIconInLegend=True, icon="marker_icons/playerhead.png"),
+            dict(name="Chests", filterFunction=chest_filter, icon="marker_icons/chest.png", showIconInLegend=True),
+			dict(name="Shulkers", filterFunction=shulker_filter, icon="marker_icons/shulker.png", showIconInLegend=True),
 			dict(name="Signs", filterFunction=sign_filter, showIconInLegend=True),
-			dict(name="Books", filterFunction=books_filter, icon="book.png", showIconInLegend=True),
+			dict(name="Books", filterFunction=books_filter, icon="marker_icons/book.png", showIconInLegend=True),
 		]
 	)
 
@@ -1131,7 +1131,7 @@ for render in renders.keys():
 			{
 				'name': name,
 				'filterFunction': filter_function,
-				'icon': 'mlocation.png',
+				'icon': 'marker_icons/mlocation.png',
 				'showInLegend': False
 			}
 		)
