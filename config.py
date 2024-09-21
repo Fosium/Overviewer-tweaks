@@ -1,5 +1,3 @@
-# config written by alpha (Alphanet#0001 on discord)
-
 import collections
 import functools
 
